@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
+import printJS from 'print-js';
 
 import profilePic from './profile.png';
 import es from './locales/es.json';
@@ -11,8 +12,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background: linear-gradient(
       270deg,
-      rgba(42, 1, 166, 1) 25%,
-      rgba(200, 0, 0, 1) 25%,
+      rgba(200, 0, 0, 1) 30%,
       rgba(255, 165, 0, 1) 100%
     );
     background-size: 200% 200%;
@@ -40,7 +40,7 @@ const Resume = styled.div`
     padding-bottom: 3.5rem;
     box-sizing: border-box;
     margin: auto;
-    margin-top: 2.5%;
+    margin-top: auto;
     margin-bottom: 2.5%;
     background-color: white;
     border-radius: 10px;
@@ -58,6 +58,12 @@ const ProfilePic = styled.img`
     id: profilePic;
 `;
 
+const ButtonsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;
+
 const ShareButton = styled.button`
     display: block;
     width: 10rem;
@@ -67,7 +73,7 @@ const ShareButton = styled.button`
     background-color: #1a8cff;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 7.5px;
     cursor: pointer;
     font-size: 1em;
     transition: background-color 0.3s ease;
@@ -84,13 +90,15 @@ const LanguageToggle = styled.button`
     transform: translateX(-50%); // This will ensure the button is truly centered
     background-color: #1a8cff;
     color: white;
-    border: none;
-    border-radius: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1.75px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 1.2em; // Increase the font size
     padding: 10px 20px; // Increase the padding
     transition: background-color 0.3s ease;
-
+    z-index: ${({ active }) => (active ? 2 : 0)};
     &:hover {
         background-color: #014d9f;
     }
@@ -124,6 +132,35 @@ function App() {
   };
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  async function printAsPDF() {
+    document.getElementById("profilePic").style.display="none";
+    [...document.getElementsByName("emoji")]
+      .forEach((el)=> {el.style.display="none"});
+    [...document.getElementsByName("button")]
+      .forEach((el)=> {el.style.display="none"});
+    printJS({
+      printable: 'resume',
+      type: 'html',
+      css: [
+        "./index.css"
+      ],
+      scanStyles: false,
+      header: null, 
+      targetStyles: ['*'], 
+      onLoadingEnd: null, 
+      orientation: 'portrait',
+      fileName: 'Julio_Cabanillas_CV.pdf',
+    });
+    document.getElementById("profilePic").style.display="block";
+    [...document.getElementsByName("emoji")]
+      .forEach((el)=> {el.style.display="flex"});
+    [...document.getElementsByName("button")]
+      .forEach((el)=> {el.style.display="block"});
+    setTimeout(function(){
+      window.location.reload();
+    }, 1000);
+}
 
   const copyToClipboard = () => {
     const dummy = document.createElement('input');
@@ -179,54 +216,56 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <LanguageToggle onClick={toggleLanguage}>
-        {language === 'es' ? 'English' : 'Español'}
-      </LanguageToggle>
+      <ButtonsContainer>
+        <LanguageToggle onClick={toggleLanguage}>
+          {language === 'es' ? 'English' : 'Español'}
+        </LanguageToggle>
+        <ShareButton name="button" onClick={copyToClipboard}>{content.shareButton}</ShareButton>
+        <ShareButton name="button" onClick={printAsPDF}>{content.printPDF}</ShareButton>
+    </ButtonsContainer>
       <div style={{position: 'relative', marginTop: '70px'}}> {/* Add this div */}
-        <Resume windowWidth={windowWidth}>
+        <Resume windowWidth={windowWidth} id="resume">
           <div>
             <h1><Underline>{content.title}</Underline></h1>
             <h2>{content.position}</h2>
             <ProfilePic src={profilePic} alt="julio_cabanillas" id="profilePic"/>
           </div>
-          <h3><Emoji>🎓</Emoji> <Underline>{content.education.title}</Underline></h3>
+          <h3><Emoji name="emoji" >🎓</Emoji> <Underline>{content.education.title}</Underline></h3>
           <ul>
             {content.education.items.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
-          <h3><Emoji>💻</Emoji> <Underline>{content.technicalSkills.title}</Underline></h3>
+          <h3><Emoji name="emoji" >💻</Emoji> <Underline>{content.technicalSkills.title}</Underline></h3>
           <ul>
             {content.technicalSkills.items.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
-          <h3><Emoji>👨‍💼</Emoji> <Underline>{content.experience.title}</Underline></h3>
+          <h3><Emoji name="emoji" >👨‍💼</Emoji> <Underline>{content.experience.title}</Underline></h3>
           <ul>
             {content.experience.items.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
-          <h3><Emoji>🏆</Emoji> <Underline>{content.achievements.title}</Underline></h3>
+          <h3><Emoji name="emoji" >🏆</Emoji> <Underline>{content.achievements.title}</Underline></h3>
           <ul>
             {content.achievements.items.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
-          <h3><Emoji>🌐</Emoji> <Underline>{content.languages.title}</Underline></h3>
+          <h3><Emoji name="emoji" >🌐</Emoji> <Underline>{content.languages.title}</Underline></h3>
           <ul>
             {content.languages.items.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }} />)}
           </ul>
-          <h3><Emoji>🚗</Emoji> <Underline>{content.additionalSkills.title}</Underline></h3>
+          <h3><Emoji name="emoji" >🚗</Emoji> <Underline>{content.additionalSkills.title}</Underline></h3>
           <ul>
             {content.additionalSkills.items.map((item, index) => <li key={index}>{item}</li>)}
           </ul>
-          <h3><Emoji>🎯</Emoji> <Underline>{content.objective.title}</Underline></h3>
+          <h3><Emoji name="emoji" >🎯</Emoji> <Underline>{content.objective.title}</Underline></h3>
           <p>{content.objective.items}</p>
-          <h3><Emoji>📂</Emoji> <Underline>{content.portfolio.title}</Underline></h3>
+          <h3><Emoji name="emoji" >📂</Emoji> <Underline>{content.portfolio.title}</Underline></h3>
           <Portfolio dangerouslySetInnerHTML={{ __html: content.portfolio.items }} />
-          <h3><Emoji>📞</Emoji> <Underline>{content.contact.title}</Underline></h3>
+          <h3><Emoji name="emoji" >📞</Emoji> <Underline>{content.contact.title}</Underline></h3>
           <Contact>
             {content.contact.items.map((item, index) => <li key={index} dangerouslySetInnerHTML={{ __html: item }} />)}
           </Contact>
-          <ShareButton onClick={copyToClipboard}>{content.shareButton}</ShareButton>
         </Resume>
       </div>
     </div>
   );
-  
   
 }
 
