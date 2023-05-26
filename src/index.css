@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+body {
+    background-color: whitesmoke;
+    color: black;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 275%;
+    z-index: 2;
+}
+
+h3 {
+    margin-top: 2.5rem;
+}
+
+emoji {
+    font-size: 125%;
+    margin-right: 0.5rem;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+#resume {
+    width: 75%;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+    box-sizing: border-box;
+    margin: auto;
+    margin-top: 2.5%;
+    margin-bottom: 2.5%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px grey;
+    position: relative;
+}
+
+#profile-pic {
+    margin-top: -4.5rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    transform: scale(0.5);
+}
+
+#share-button {
+    display: block;
+    width: 10rem;
+    height: 50px;
+    margin-top: 2.5rem;
+    margin: 20px auto;
+    background-color: #1a8cff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#share-button:hover {
+    background-color: #014d9f;
+}
+
+#contact {
+    height: 11rem;
+    font-size: 140%;
+}
+
+@media (max-width: 1070px) {
+    #profile-pic {
+        margin-top: -5.5rem;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        transform: scale(0.65);
+    }
+    #resume {
+        width: 100%;
+        padding: 2.5%;
+        margin: 0%;
+    }
+    #contact {
+        margin-top: 2rem;
+        height: 11rem;
+        font-size: 140%;
+    }
+    li, p {
+        font-size: 2.25rem;
+    }
+    h1, h3, emoji {
+        font-size: 2.45rem;
+        margin-bottom: 1.25rem;
+    }
+}
+
+li, p {
+    font-size: 1.2rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#portfolio {
+    font-size: 140%;
+}

@@ -1,0 +1,62 @@
+{
+    "shareButton": "Share",  
+    "title": "Julio Cabanillas",
+    "position": "Junior Web Developer",
+    "education": {
+        "title": "EDUCATION",
+        "items": [
+            "Multiplatform Application Development - FESAC - Class of 2021/23",
+            "Full Stack Web Bootcamp - <a target='_blank' href='https://www.thebridge.tech/bootcamps/bootcamp-fullstack-developer#curriculum'><b>The Bridge</b></a> - <a target='_blank' href='https://drive.google.com/file/d/1fdYMA0VH0zo7s0gfmrXxq5q_WJSWVNFU/'>March-Nov./2022</a> - Fully funded by INDRA.",
+            "Bachelor's Degree in Biology - University of Sevilla - Class of 2014/18"
+        ]
+    },
+    "technicalSkills": {
+        "title": "TECHNICAL SKILLS",
+        "items": [
+            "Programming languages: JavaScript, PHP, SQL, Java, C++ and Python."
+        ]
+    },
+    "experience": {
+        "title": "EXPERIENCE",
+        "items": [
+            "Vocational training internships in application development at SOLTEL",
+            "Notable laboratory internships for the construction of <a target='_blank' href='https://drive.google.com/drive/folders/0ByS7aqmz0L--djRzalk5aVdrZkU?resourcekey=0-s-HdZeIiq0PaekeQePmxYQ'>useful tools</a> in Excel."
+        ]
+    },
+    "achievements": {
+        "title": "ACHIEVEMENTS",
+        "items": [
+            "Leader of the winning team in the Global Game Jam competition at the <a target='_blank' href='https://drive.google.com/file/d/1bENRq7lslyJndL4KGnBLEdsRVX9_GYgr/'>RES 2022</a> space, with the game <a target='_blank' href='https://pelocho.itch.io/dual-vision'>Dual Vision</a>."
+        ]
+    },
+    "languages": {
+        "title": "LANGUAGES",
+        "items": [
+            "English: C1 level <a target='_blank' href='https://drive.google.com/file/d/1JiBMzR9vvS6IXz-163-vUoEGoiILemj4/'>certified</a>. Erasmus in Lincoln, United Kingdom."
+        ]
+    },
+    "additionalSkills": {
+        "title": "ADDITIONAL SKILLS",
+        "items": [
+            "Problem solver and demonstrated leadership skills",
+            "Car, driving license, and willingness to drive anywhere"
+        ]
+    },
+    "objective": {
+        "title": "OBJECTIVE",
+        "items":"In the short to medium term, I want to join the IT sector as a web and multiplatform application developer, with a focus on problem solving and continuous improvement"
+    },
+    "portfolio": {
+        "title": "PORTFOLIO",
+        "items": "<a target='_blank' href='https://github.com/V3RNE42'>github.com/V3RNE42</a>"
+    },
+    "contact": {
+        "title": "CONTACT",
+        "items": [
+            "<a target='_blank' href='https://linkedin.com/in/juliocabanillas42'>linkedin.com/in/juliocabanillas42</a>",
+            "(+34)692951706",
+            "juliocabanillas42@gmail.com",
+            "Seville, Spain"
+        ]
+    }
+}

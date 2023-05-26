@@ -1,0 +1,62 @@
+{
+    "shareButton": "Comparte",
+    "title": "Julio Cabanillas",
+    "position": "Desarrollador Web Junior",
+    "education": {
+        "title": "EDUCACIÓN",
+        "items": [
+            "CFGS Desarrollo de Aplicaciones Multiplataforma - FESAC - Promoción 2021/23",
+            "Bootcamp Full Stack Web - <a target='_blank' href='https://www.thebridge.tech/bootcamps/bootcamp-fullstack-developer#curriculum'><b>The Bridge</b></a> - <a target='_blank' href='https://drive.google.com/file/d/1fdYMA0VH0zo7s0gfmrXxq5q_WJSWVNFU/'>Marzo-Nov./2022</a> - Totalmente financiado por INDRA.",
+            "Licenciatura en Biología - Universidad de Sevilla - Promoción 2014/18"
+        ]
+    },
+    "technicalSkills": {
+        "title": "HABILIDADES TÉCNICAS",
+        "items": [
+            "Lenguajes de programación: JavaScript, PHP, SQL, Java, C++ y Python."
+        ]
+    },
+    "experience": {
+        "title": "EXPERIENCIA",
+        "items": [
+            "Prácticas de formación profesional en desarrollo de aplicaciones en SOLTEL",
+            "Prácticas de laboratorio notables para la construcción de <a target='_blank' href='https://drive.google.com/drive/folders/0ByS7aqmz0L--djRzalk5aVdrZkU?resourcekey=0-s-HdZeIiq0PaekeQePmxYQ'>herramientas útiles</a> en Excel."
+        ]
+    },
+    "achievements": {
+        "title": "LOGROS",
+        "items": [
+            "Líder del equipo ganador en la competencia Global Game Jam en el espacio <a target='_blank' href='https://drive.google.com/file/d/1bENRq7lslyJndL4KGnBLEdsRVX9_GYgr/'>RES 2022</a>, con el juego <a target='_blank' href='https://pelocho.itch.io/dual-vision'>Dual Vision</a>."
+        ]
+    },
+    "languages": {
+        "title": "IDIOMAS",
+        "items": [
+            "Inglés: nivel C1 <a target='_blank' href='https://drive.google.com/file/d/1JiBMzR9vvS6IXz-163-vUoEGoiILemj4/'>certificado</a>. Erasmus en Lincoln, Reino Unido."
+        ]
+    },
+    "additionalSkills": {
+        "title": "HABILIDADES ADICIONALES",
+        "items": [
+            "Resolución de problemas y habilidades de liderazgo demostradas",
+            "Coche, licencia de conducir y disposición para conducir a cualquier lugar"
+        ]
+    },
+    "objective": {
+        "title": "OBJETIVO",
+        "items":"A corto y medio plazo, quiero unirme al sector de TI como desarrollador de aplicaciones web y multiplataforma, con un enfoque en la resolución de problemas y la mejora continua"
+    },
+    "portfolio": {
+        "title": "PORTFOLIO",
+        "items": "<a target='_blank' href='https://github.com/V3RNE42'>github.com/V3RNE42</a>"
+    },
+    "contact": {
+        "title": "CONTACTO",
+        "items": [
+            "<a target='_blank' href='https://linkedin.com/in/juliocabanillas42'>linkedin.com/in/juliocabanillas42</a>",
+            "(+34)692951706",
+            "juliocabanillas42@gmail.com",
+            "Sevilla, España"
+        ]
+    }
+}
